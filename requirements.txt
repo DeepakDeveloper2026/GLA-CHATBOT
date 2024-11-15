@@ -6,5 +6,6 @@ faiss-cpu==1.7.2  # Ensure FAISS is installed for CPU
 faiss-gpu==1.7.2  # Optional: If you plan to use GPU acceleration (remove if not needed)
 google-generativeai==0.0.8  # Ensure compatibility with the Google Generative AI API
 langchain-community==0.0.39  # Ensure compatibility with the community modules
+fitz
 PyMuPDF==1.21.1  # Correct name for the PyMuPDF package (fitz is the internal name)
 
