@@ -1,10 +1,10 @@
-streamlit==1.19.0
-langchain==0.15.0
-langchain-google-genai==0.0.5
-python-dotenv==1.0.0
-faiss-cpu==1.7.1  # Ensure FAISS is installed for CPU
-faiss-gpu==1.7.1  # Optional: If you plan to use GPU acceleration
-google-generativeai==0.2.0  # Ensure compatibility with the Google Generative AI API
-langchain_community==0.0.6  # Ensure compatibility with the community modules
-fitz==1.0.0  # PyMuPDF for PDF processing
-PyMuPDF
+streamlit
+langchain
+langchain-google-genai
+python-dotenv
+faiss-cpu  # Ensure FAISS is installed for CPU
+  # Optional: If you plan to use GPU acceleration (remove if not needed)
+google-generativeai # Ensure compatibility with the Google Generative AI API
+langchain-community # Ensure compatibility with the community modules
+PyMuPDF # Correct name for the PyMuPDF package (fitz is the internal name)
+
