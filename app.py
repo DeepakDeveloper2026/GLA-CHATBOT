@@ -61,9 +61,11 @@ if not os.path.exists("faiss_index"):
 def get_conversational_chain():
     prompt_template = """
     Answer the question as detailed as possible from the provided context. 
-    If the answer is not in the provided context, say "answer is not available in the context".\n
-    Context:\n {context}\n
-    Question:\n{question}\n
+    If the answer is not in the provided context, say "answer is not available in the context".
+    Context:
+    {context}
+    Question:
+    {question}
     Answer:
     """
     model = ChatGoogleGenerativeAI(model="gemini-1.5-pro", temperature=0.3)
@@ -76,6 +78,9 @@ def user_input(user_question):
         if not isinstance(user_question, str) or not user_question.strip():
             st.error("Invalid input! Please enter a valid question.")
             return
+
+        # Append query to search history
+        st.session_state.search_history.append(user_question)
 
         embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 
@@ -102,11 +107,10 @@ def user_input(user_question):
     except Exception as e:
         st.error(f"Error processing query: {e}")
 
-
 # Main function
 def main():
     st.set_page_config(page_title="GLA ChatBot", layout="wide")
-    st.header("GLA ChatBot Help & Support 💁")
+    st.header("GLA ChatBot Help & Support 🧑‍💻")
 
     # Initialize search history
     if "search_history" not in st.session_state:
